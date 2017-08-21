@@ -41,6 +41,11 @@ module.exports = {
                 }
             }, //src和test文件夹下的.js和.vue文件使用eslint-loader
             {
+                test: /\.scss$/,
+                loaders: ['style', 'css', 'sass'],
+                include: [resolve('src'), resolve('test')]
+            }, //src和test文件夹下的.scss文件使用sass-loader
+            {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: vueLoaderConfig
