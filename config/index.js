@@ -43,7 +43,14 @@ module.exports = {
         //发布路径
         assetsPublicPath: '/',
         //配置代理表
-        proxyTable: {},
+        proxyTable: {
+            '/api': {
+                target: 'https://www.baidu.com/api/',
+                pathRewrite: {
+                    '^/api': '/'
+                }
+            }
+        },
         // CSS Sourcemaps off by default because relative paths are "buggy"
         // with this option, according to the CSS-Loader README
         // (https://github.com/webpack/css-loader#sourcemaps)
